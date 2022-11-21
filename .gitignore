@@ -1,0 +1,4 @@
+*.md.backup
+*.backup
+**/.backup
+**/*.backup

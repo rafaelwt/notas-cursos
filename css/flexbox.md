@@ -1,7 +1,7 @@
 # Notas:
  - [flex-direction](#flex-direction) 
  - [min-width](#min-width) 
- - [Organizar las filas: flex-wrap](#flex-wrap)
+ - [Organizar las filas: flex-wrap](#organizar-las-filas:-flex-wrap)
 
 ## flex-direction
 Por defecto, el valor de esta propiedad está establecido como row, que nos indica que el main axis irá en horizontal y de izquierda a derecha. Como contraposición, es importante conocer que el cross axis siempre será el eje perpendicular al definido anterior por lo que por defecto podemos decir que este eje irá en vertical y de arriba a abajo.
