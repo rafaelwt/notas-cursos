@@ -5,10 +5,10 @@
  - [flex-wrap](#flex-wrap)
  - [align-content](#align-content)
  - [justify-content](#justify-content)
- - [Ajustar el contenido de los flex items](#align-items|align-self)
+ - [Ajustar el contenido de los flex items](#align-items-align-self)
  - [Establecer el orden del contenido](#order)
- - [Crear elementos flexibles grow shrink](#flex-grow|flex-shrink)
- - [Establecer el tamaño base de nuestros flex-items: flex-basis](#flex-items|flex-basis)
+ - [Crear elementos flexibles grow shrink](#flex-grow-flex-shrink)
+ - [Establecer el tamaño base de nuestros flex-items: flex-basis](#flex-items-flex-basis)
 
 ## flex-direction
 Por defecto, el valor de esta propiedad está establecido como row, que nos indica que el main axis irá en horizontal y de izquierda a derecha. Como contraposición, es importante conocer que el cross axis siempre será el eje perpendicular al definido anterior por lo que por defecto podemos decir que este eje irá en vertical y de arriba a abajo.
@@ -100,7 +100,7 @@ Esta propiedad establece un índice a partir del cual los items son ordenados en
 
 Mediante esta propiedad sólo modificamos el orden visual, dejando intacta la estructura de nuestro DOM, por lo que es importante sólo aplicarla en casos que el orden de lectura no sea importante o en casos en los que el orden de lectura permanezca inalterado aunque visualmente se haya modificado cómo aparecen los elementos.
 
-## #flex-grow|flex-shrink
+## #flex-grow-flex-shrink
 flex-shrink
 
 Esta propiedad establece un factor de decrecimiento a los items del flex container. Esto provocará que los items reduzcan su tamaño en el main axis cuando el espacio disponible sea menor que el espacio que necesitan.
@@ -135,7 +135,7 @@ Es recomendable usar esta propiedad en lugar de establecer los valores por separ
 
 Por ejemplo, al establecer flex: 1, flex-shrink adquiere el valor de 1 y flex-basis el valor de 0%. Que en la práctica resulta con repartir el espacio de todos los items a partes iguales.
 
-## flex-items|flex-basis
+## flex-items-flex-basis
 
 
 ```
