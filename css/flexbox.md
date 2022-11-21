@@ -2,6 +2,7 @@
  - [flex-direction](#flex-direction) 
  - [min-width](#min-width) 
  - [flex-wrap](#flex-wrap)
+ - [align-content|justify-content](#align-content|justify-content)
 
 ## flex-direction
 Por defecto, el valor de esta propiedad está establecido como row, que nos indica que el main axis irá en horizontal y de izquierda a derecha. Como contraposición, es importante conocer que el cross axis siempre será el eje perpendicular al definido anterior por lo que por defecto podemos decir que este eje irá en vertical y de arriba a abajo.
@@ -19,7 +20,7 @@ Por último, también es posible aplicar el valor reverse a ambas opciones, sin 
 ## min-width
 `La propiedad min-width se usa para determinar la anchura mínima de un elemento. Previene que la propiedad width pueda ser inferior que min-width`
 
-## Organizar las filas: flex-wrap
+## flex-wrap
 si queremos que el contenido salte a la línea siguiente cuando no haya suficiente espacio disponible, podemos establecer el valor wrap que permite al contenedor crear múltiples líneas.
 Por otro lado, cuando el main axis de nuestro contenedor es column debemos de tener en cuenta que la web crece en vertical de forma indefinida por lo que si no establecemos una altura fija a nuestro contenedor no veremos este comportamiento de wrapeo de columnas.
 
@@ -35,4 +36,5 @@ Y finalmente, al igual que la propiedad flex-direction, es posible establecer un
 }
 ```
 
-### Establecer el espacio entre las filas: align-content y justify-content
+## align-content|justify-content
+Establecer el espacio entre las filas: align-content y justify-content****
