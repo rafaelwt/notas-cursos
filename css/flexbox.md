@@ -9,6 +9,10 @@
  - [Establecer el orden del contenido](#order)
  - [Crear elementos flexibles grow shrink](#flex-grow-flex-shrink)
  - [Establecer el tamaño base de nuestros flex-items: flex-basis](#flex-items-flex-basis)
+ - [Combinar flex-basis y flex-wrap](#flex-basis-flex-wrap)
+ - [alineamiento de justify-content](#justify)
+ - [alinamiento align-items](#align-items)
+ - [Layout responsive sin media queries usando flex](#responsive)
 
 ## flex-direction
 Por defecto, el valor de esta propiedad está establecido como row, que nos indica que el main axis irá en horizontal y de izquierda a derecha. Como contraposición, es importante conocer que el cross axis siempre será el eje perpendicular al definido anterior por lo que por defecto podemos decir que este eje irá en vertical y de arriba a abajo.
@@ -151,3 +155,94 @@ Es importante tener en cuenta que aunque parezca que esta regla coincide con est
 Es por esto que es recomendable usar esta propiedad cuando queramos dar un tamaño base a los elementos de un flex container en lugar de usar el width o el height.
 
 Por último, como ya hemos visto antes, es posible establecer el flex-basis mediante el shorthand flex. Coincidiendo con el tercer valor del shorthand y teniendo un valor por defecto de 0% al usar este shorthand.
+
+## flex-basis-flex-wrap
+
+La propiedad flex-basis indica el tamaño base a partir del que los flex items crecerán o disminuiran en función de su configuración.
+
+
+Si el contenedor no está configurado para hacer wrap de los items no veremos ningún comportamiento especial, pero si activamos esta propiedad el contenedor creará una nueva fila cada vez que no tenga espacio disponible para los items según el tamaño que les hayamos establecido.
+
+## justify
+
+![justify-content](./img/justify-content.png)
+
+A parte de los valores propios de flex también es posible emplear los valores de start y end.
+![direction-alingment](./img/direction-alingment.png)
+
+Estos valores en lugar de alinearse con el main start y el main end se alinearán con la dirección de escritura de nuestro documento por lo que cómo vemos en el vídeo es posible que tengamos situaciones en las que no coincidan ambos orígenes y tengamos comportamientos no esperados.
+
+```
+.container {
+	display: flex;
+	gap: 1rem:
+	justify-content: flex-start;
+	direcction: rtl|ltf;
+}
+```
+
+## align-items
+
+A parte de los valores anteriores, es posible también indicar los valores de start y end que harán que nuestros items sigan el eje de la dirección de escritura en lugar de cross start y el cross end.
+
+
+Finalmente también vemos los valores de self-start y self-end que harán que el item siga su propia dirección de escritura y no la indicada en el contendor flex.
+![align-items](./img/align-items.png)
+
+```
+.container {
+	display: flex;
+	aling-items: center|stretch|flex-start|flex-end
+}
+```
+Tambien podemos alienar un items  especifico a con la propiedad _align-self_
+> align-self: self-start|self-end;
+```
+.card::nth-child(1) {
+	align-self: self-start;
+}
+```
+
+## responsive
+
+[Ejemplo en github](https://github.com/CodelyTV/css-flex-course/tree/main/43-responsive-layout)
+```
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .menu {
+    flex-basis: 20rem;
+    flex-grow: 1;
+  }
+
+  .gallery {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 60%;
+  }
+}
+```
+
+El truco de este layout parte de indicar al contenido que queremos que coja todo el espacio disponible, que no use el menú, con la combinación de la propiedad flex-basis: 0 y flex-grow: 999.
+
+
+Además, cuando el espacio disponible sea menor al 60% del contenedor el contenido se moverá a una nueva fila por lo que obtenemos el efecto del layout responsive que se ajusta cuando hay poco espacio disponible.
+
+
+Finalmente hacemos unos ajustes al menú para que también se adapte mejor a todos los tamaños de pantalla y así obtener un layout más flexible.
+```
+menu {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+    li {
+      flex-grow: 1;
+      flex-basis: 20rem;
+    }
+  }
+}
+```
