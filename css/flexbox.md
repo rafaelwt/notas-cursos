@@ -1,5 +1,9 @@
-` los flex se pueden anidar `
-# Notas:
+
+## Notas
+
+- _Los flex se pueden anidar los hijos de un contenedor flex pueden tambien ser ***display: flex***_
+## flexbox
+# Menu:
  - [flex-direction](#flex-direction) 
  - [min-width](#min-width) 
  - [flex-wrap](#flex-wrap)
@@ -14,7 +18,12 @@
  - [alinamiento align-items](#align-items)
  - [Layout responsive sin media queries usando flex](#responsive)
 
+# Tips:
+ - [Repartir tamaño igual de los item : flex](#flex) 
+
+
 ## flex-direction
+[⬆️](#flexbox)
 Por defecto, el valor de esta propiedad está establecido como row, que nos indica que el main axis irá en horizontal y de izquierda a derecha. Como contraposición, es importante conocer que el cross axis siempre será el eje perpendicular al definido anterior por lo que por defecto podemos decir que este eje irá en vertical y de arriba a abajo.
 A parte del valor row, es posible orientar el main axis en vertical usando el valor column.
 
@@ -28,9 +37,11 @@ Por último, también es posible aplicar el valor reverse a ambas opciones, sin 
 ```
 
 ## min-width
+[⬆️](#flexbox)
 `La propiedad min-width se usa para determinar la anchura mínima de un elemento. Previene que la propiedad width pueda ser inferior que min-width`
 
 ## flex-wrap
+[⬆️](#flexbox)
 si queremos que el contenido salte a la línea siguiente cuando no haya suficiente espacio disponible, podemos establecer el valor wrap que permite al contenedor crear múltiples líneas.
 Por otro lado, cuando el main axis de nuestro contenedor es column debemos de tener en cuenta que la web crece en vertical de forma indefinida por lo que si no establecemos una altura fija a nuestro contenedor no veremos este comportamiento de wrapeo de columnas.
 
@@ -47,7 +58,7 @@ Y finalmente, al igual que la propiedad flex-direction, es posible establecer un
 ```
 
 ## align-content
-
+[⬆️](#flexbox) 
 
 Esta propiedad nos permite repartir el espacio sobrante en el cross axis, es decir, el eje perpendicular al main axis.
 
@@ -59,6 +70,7 @@ Al igual que la propiedad anterior, gracias a align-content podremos ajustar có
 Establecer el espacio entre las filas: align-content y justify-content
 
 ## justify-content
+[⬆️](#flexbox)
 
 Con esta propiedad podemos establecer cómo se reparte el contenido sobrante en el main axis. Jugando con sus valores podemos ajustar nuestro contenido para que el espacio sobrante siempre se reparta con gran precisión de la forma que le indiquemos.
 
@@ -68,8 +80,8 @@ En el vídeo vemos cómo es fácil centrar el contenido o repartirlo a partes ig
 
 Es importante indicar que esta propiedad se aplicará a cada una de las filas que se generen por lo que si una fila tiene menos elementos que la anterior el espacio se repartirá de forma distinta.
 
-## align-items|align-self
-
+## align-items-align-self  
+[⬆️](#flexbox)
 
 aling-items
 
@@ -87,6 +99,7 @@ align-self
 Mientras que align-items se aplica al contenedor flex, afectando por igual a todos los items del contenedor, es posible sobreescribir el valor de esta propiedad para un item en particular usando la propiedad align-self.
 
 ## order
+[⬆️](#flexbox)
 ```
   .item:nth-child(2) {
     order: -1|1;
@@ -105,6 +118,7 @@ Esta propiedad establece un índice a partir del cual los items son ordenados en
 Mediante esta propiedad sólo modificamos el orden visual, dejando intacta la estructura de nuestro DOM, por lo que es importante sólo aplicarla en casos que el orden de lectura no sea importante o en casos en los que el orden de lectura permanezca inalterado aunque visualmente se haya modificado cómo aparecen los elementos.
 
 ## #flex-grow-flex-shrink
+[⬆️](#flexbox)
 flex-shrink
 
 Esta propiedad establece un factor de decrecimiento a los items del flex container. Esto provocará que los items reduzcan su tamaño en el main axis cuando el espacio disponible sea menor que el espacio que necesitan.
@@ -140,7 +154,8 @@ Es recomendable usar esta propiedad en lugar de establecer los valores por separ
 Por ejemplo, al establecer flex: 1, flex-shrink adquiere el valor de 1 y flex-basis el valor de 0%. Que en la práctica resulta con repartir el espacio de todos los items a partes iguales.
 
 ## flex-items-flex-basis
-
+[⬆️](#flexbox)
+***Establecer el tamaño base de nuestros flex-items: flex-basis***
 
 ```
  .card {
@@ -157,6 +172,7 @@ Es por esto que es recomendable usar esta propiedad cuando queramos dar un tama�
 Por último, como ya hemos visto antes, es posible establecer el flex-basis mediante el shorthand flex. Coincidiendo con el tercer valor del shorthand y teniendo un valor por defecto de 0% al usar este shorthand.
 
 ## flex-basis-flex-wrap
+[⬆️](#flexbox)
 
 La propiedad flex-basis indica el tamaño base a partir del que los flex items crecerán o disminuiran en función de su configuración.
 
@@ -164,6 +180,7 @@ La propiedad flex-basis indica el tamaño base a partir del que los flex items c
 Si el contenedor no está configurado para hacer wrap de los items no veremos ningún comportamiento especial, pero si activamos esta propiedad el contenedor creará una nueva fila cada vez que no tenga espacio disponible para los items según el tamaño que les hayamos establecido.
 
 ## justify
+[⬆️](#flexbox)
 
 ![justify-content](./img/justify-content.png)
 
@@ -181,7 +198,10 @@ Estos valores en lugar de alinearse con el main start y el main end se alineará
 }
 ```
 
+
 ## align-items
+[⬆️](#flexbox)
+
 
 A parte de los valores anteriores, es posible también indicar los valores de start y end que harán que nuestros items sigan el eje de la dirección de escritura en lugar de cross start y el cross end.
 
@@ -204,7 +224,8 @@ Tambien podemos alienar un items  especifico a con la propiedad _align-self_
 ```
 
 ## responsive
-
+[⬆️](#flexbox)
+***Layout responsive sin media queries usando flex***
 [Ejemplo en github](https://github.com/CodelyTV/css-flex-course/tree/main/43-responsive-layout)
 ```
 .container {
@@ -246,3 +267,7 @@ menu {
   }
 }
 ```
+
+## flex
+[⬆️](#flexbox)
+> flex: 1;
